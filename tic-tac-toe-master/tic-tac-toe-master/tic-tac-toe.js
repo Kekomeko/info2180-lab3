@@ -4,11 +4,11 @@ window.onload=function(){
        
 
       for(const item of squareDivs){
-          item.className = "square";
+          item.className = "square"; 
       }
 
       for(const item of squareDivs){
-          item.addEventListener("click", function(){
+         item.addEventListener("click", function(){
              if (gamePieces[gamePieces.length-1] == "O" || gamePieces[gamePieces.length-1] == ""){
                gamePieces.push ("X");
                item.textContent=("X");
@@ -20,9 +20,19 @@ window.onload=function(){
                gamePieces.push ("O");
                item.textContent=("O");
                item.classList.add("O")
-               
             }
          });
-      }
+          item.addEventListener("mouseenter", function(){
+            item.classList.add ("hover");
+
+         });
+         item.addEventListener("mouseleave", function(){
+            item.classList.remove ("hover");
    
-}
+         });
+
+         
+      }  
+
+
+   }
