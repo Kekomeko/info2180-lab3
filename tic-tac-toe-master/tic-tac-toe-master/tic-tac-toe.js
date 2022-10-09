@@ -2,7 +2,7 @@ window.onload=function(){
    gamePieces = [""];
    let squareDivs = document.getElementById("board").querySelectorAll("div");
    let winner = document.getElementById("status");
-   let restart = document.querySelector("button");
+   
        
 
    for(const item of squareDivs){
@@ -59,17 +59,13 @@ window.onload=function(){
       item.addEventListener("mouseleave", function(){
          item.classList.remove ("hover");
 
-      });
-      item.addEventListener
-      
-
-     
-      
+      });  
         
+     
    }
-
-         
-      
+   
+   
+               
 }  
                        
 
