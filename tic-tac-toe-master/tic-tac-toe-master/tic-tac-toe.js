@@ -2,6 +2,7 @@ window.onload=function(){
    gamePieces = [""];
    let squareDivs = document.getElementById("board").querySelectorAll("div");
    let winner = document.getElementById("status");
+   let button = document.getElementsByClassName("btn")[0];
    
        
 
@@ -60,7 +61,16 @@ window.onload=function(){
          item.classList.remove ("hover");
 
       });  
-        
+      button.addEventListener("click", function(){
+         item.classList.remove("X");
+         item.classList.remove("O");
+         item.textContent=("");
+         item.textContent=("");
+         winner.textContent =("Move your mouse over a square and click to play an X or an O.");
+         winner.classList.remove("you-won")
+         gamePieces = [""];
+         
+      });
      
    }
    
