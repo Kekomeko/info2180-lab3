@@ -3,6 +3,7 @@ window.onload=function(){
    let squareDivs = document.getElementById("board").querySelectorAll("div");
    let winner = document.getElementById("status");
    let button = document.getElementsByClassName("btn")[0];
+
    
        
 
@@ -11,11 +12,14 @@ window.onload=function(){
    }
 
    for(const item of squareDivs){
-      item.addEventListener("click", function(){
+      item.addEventListener("click", function(){ 
          if (gamePieces[gamePieces.length-1] == "O" || gamePieces[gamePieces.length-1] == ""){
             gamePieces.push ("X");
             item.textContent=("X");
             item.classList.add("X")
+            item.style.pointerEvents="none";
+
+
                
          }
          
@@ -23,7 +27,9 @@ window.onload=function(){
             gamePieces.push ("O");
             item.textContent=("O");
             item.classList.add("O")
+            item.style.pointerEvents="none";
          }
+
          if ((squareDivs[0].textContent == "X" && squareDivs[1].textContent == "X" && squareDivs[2].textContent == "X")
          ||(squareDivs[3].textContent == "X" && squareDivs[4].textContent == "X" && squareDivs[5].textContent == "X")
          ||(squareDivs[6].textContent == "X" && squareDivs[7].textContent == "X" && squareDivs[8].textContent == "X")//rows
@@ -52,12 +58,12 @@ window.onload=function(){
          }
 
       });
-
+      
       item.addEventListener("mouseenter", function(){
          item.classList.add ("hover");
 
       });
-      item.addEventListener("mouseleave", function(){
+      item.addEventListener("mouseleave",function(){
          item.classList.remove ("hover");
 
       });  
@@ -65,16 +71,14 @@ window.onload=function(){
          item.classList.remove("X");
          item.classList.remove("O");
          item.textContent=("");
-         item.textContent=("");
          winner.textContent =("Move your mouse over a square and click to play an X or an O.");
          winner.classList.remove("you-won")
          gamePieces = [""];
+         item.style.pointerEvents="";
          
       });
+   } 
      
-   }
-   
-   
                
 }  
                        
